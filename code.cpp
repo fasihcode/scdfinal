@@ -26,6 +26,20 @@ public:
         std::cout << "Course '" << courseName << "' created.\n";
     }
 };
+class Course {
+public:
+    std::string name;
+    std::vector<Student> enrolledStudents;
+
+    Course(const std::string& courseName)
+        : name(courseName) {}
+
+    void enrollStudent(const Student& student) {
+        enrolledStudents.push_back(student);
+        std::cout << "Student '" << student.username << "' enrolled in course '" << name << "'.\n";
+    }
+};
+
 
 int main() {
     // User Authentication
