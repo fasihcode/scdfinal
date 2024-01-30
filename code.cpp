@@ -11,6 +11,22 @@ public:
         : username(uname), password(pwd) {}
 };
 
+class Student : public User {
+public:
+    Student(const std::string& uname, const std::string& pwd)
+        : User(uname, pwd) {}
+};
+class Instructor : public User {
+public:
+    Instructor(const std::string& uname, const std::string& pwd)
+        : User(uname, pwd) {}
+
+    void createCourse(const std::string& courseName) {
+        // Implement course creation logic
+        std::cout << "Course '" << courseName << "' created.\n";
+    }
+};
+
 int main() {
     // User Authentication
     Student student1("student1", "password1");
